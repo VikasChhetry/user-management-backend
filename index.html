@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>User Management System</h1>
+
+    <!-- User Form -->
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Enter name" required>
+        <input type="email" id="email" placeholder="Enter email" required>
+        <button type="submit">Add User</button>
+    </form>
+
+    <!-- Search -->
+    <input type="text" id="search" placeholder="Search by name or email">
+
+    <!-- User List -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prev">Prev</button>
+        <span id="pageInfo"></span>
+        <button id="next">Next</button>
+        <button onclick="downloadCSV()">Download Users</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

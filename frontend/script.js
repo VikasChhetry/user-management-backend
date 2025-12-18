@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/users";
+const API_URL = "https://user-management-backend-main.onrender.com/api/users";
 let editingUserId = null;
 
 let currentPage = 0;

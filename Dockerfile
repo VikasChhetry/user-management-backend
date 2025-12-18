@@ -1,12 +1,13 @@
-# ===== Stage 1: Build the JAR =====
-FROM eclipse-temurin:21-jdk AS builder
+# ===== Stage 1: Build JAR using Maven =====
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 
 COPY pom.xml .
-COPY src ./src
+RUN mvn dependency:go-offline
 
-RUN ./mvnw clean package -DskipTests || mvn clean package -DskipTests
+COPY src ./src
+RUN mvn clean package -DskipTests
 
 
 # ===== Stage 2: Run the app =====
